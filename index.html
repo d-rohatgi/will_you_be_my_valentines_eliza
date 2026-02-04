@@ -503,11 +503,8 @@
         <p class="question">Will You Be My Valentine? 💝</p>
 
         <div class="love-letter">
-            <p>
-                Every moment with you feels like magic ✨<br><br>
-                You make my heart skip a beat, and I can't imagine
-                spending Valentine's Day with anyone else.<br><br>
-                So I have one very important question...
+            <p id="loveMessage">
+                <!-- Message will be set by JavaScript -->
             </p>
         </div>
 
@@ -732,6 +729,16 @@
             }
             musicPlaying = !musicPlaying;
         });
+
+        // Random love messages
+        const loveMessages = [
+            "Life without you would be un-ELIZA-ble ✨<br><br>You make my heart skip a beat, and I can't imagine spending Valentine's Day with anyone else.<br><br>So I have one very important question...",
+            "You've cast a spell on me, ELIZA-bracadabra! ✨<br><br>Every day with you feels like magic, and I can't imagine spending Valentine's Day with anyone else.<br><br>So I have one very important question...",
+            "Of all the people in the world, I'm so glad I found you, Eliza ✨<br><br>You make my life ELIZA-lutely amazing, and I can't imagine spending Valentine's Day with anyone else.<br><br>So I have one very important question..."
+        ];
+
+        // Set random message on page load
+        document.getElementById('loveMessage').innerHTML = loveMessages[Math.floor(Math.random() * loveMessages.length)];
 
         // Initialize
         createFloatingHearts();
