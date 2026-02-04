@@ -527,9 +527,14 @@
     <!-- Music Toggle -->
     <button class="music-toggle" id="musicToggle" title="Toggle Music">🎵</button>
 
-    <!-- Celebration Sound -->
+    <!-- Reveille Sound (plays on page load) -->
+    <audio id="reveilleSound">
+        <source src="freesound_community-reveilli-mix-33299.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Tada Sound (plays on Yes click) -->
     <audio id="celebrationSound">
-        <source src="https://www.soundjay.com/misc/sounds/fanfare-trumpets-01.mp3" type="audio/mpeg">
+        <source src="freesound_community-tada-fanfare-a-6313.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -738,6 +743,16 @@
 
         // Set random message on page load
         document.getElementById('loveMessage').innerHTML = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+
+        // Play reveille on page load
+        document.addEventListener('click', function playReveille() {
+            const reveilleSound = document.getElementById('reveilleSound');
+            reveilleSound.volume = 0.5;
+            reveilleSound.play().catch(() => {
+                console.log('Audio autoplay blocked');
+            });
+            document.removeEventListener('click', playReveille);
+        }, { once: true });
 
         // Initialize
         createFloatingHearts();
