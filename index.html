@@ -99,11 +99,12 @@
         .title {
             font-family: 'Dancing Script', cursive;
             font-size: clamp(2.5rem, 8vw, 5rem);
-            color: #ff6b8a;
-            text-shadow: 0 0 20px rgba(255, 107, 138, 0.5),
-                         0 0 40px rgba(255, 107, 138, 0.3),
-                         0 0 60px rgba(255, 107, 138, 0.2);
-            animation: glow 2s ease-in-out infinite alternate;
+            background: linear-gradient(45deg, #ff6b8a, #ff8fab, #ffc2d1, #ff8fab, #ff6b8a);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -498,8 +499,6 @@
             <span class="orbit-heart" style="animation-delay: -3s;">💘</span>
         </div>
 
-        <h2 class="name-eliza">Eliza</h2>
-
         <p class="question">Will You Be My Valentine? 💝</p>
 
         <div class="love-letter">
@@ -513,7 +512,7 @@
             <button class="btn btn-no" id="noBtn">No 💔</button>
         </div>
 
-        <p class="special-date">February 14th, 2025 💕</p>
+        <p class="special-date">February 14th, 2026 💕</p>
     </div>
 
     <!-- Yes Response Overlay -->
